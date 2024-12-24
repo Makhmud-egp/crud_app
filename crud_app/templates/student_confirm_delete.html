@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delete Student</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Optionally, include your custom CSS file if needed -->
+    <link rel="stylesheet" href="your-custom-style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Delete Student</h1>
+        <p>Are you sure you want to delete "{{ student.first_name }} {{ student.last_name }}"?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirm</button>
+        </form>
+        <a href="{% url 'student_list' %}" class="btn btn-secondary mt-3">Cancel</a>
+    </div>
+
+    <!-- Bootstrap JS (optional, for interactive components like modals, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
+</body>
+</html>
